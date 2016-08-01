@@ -1,7 +1,7 @@
 {%set name = "chartkick" %}
-{%set version = "0.4.2" %}
+{%set version = "0.5.0" %}
 {%set hash_type = "sha256" %}
-{%set hash_val = "298f9555df45e0b8bffc2613b1efd41cd74bf0dfaf850dcedb4d9984af50174f" %}
+{%set hash_val = "1cc0306b4a6de1e33ed8a849e077e4ed517c0bd4fca05e2a286c46585e89a52b" %}
 
 package:
   name: {{ name }}
