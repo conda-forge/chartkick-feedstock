@@ -1,7 +1,5 @@
-{%set name = "chartkick" %}
-{%set version = "0.5.0" %}
-{%set hash_type = "sha256" %}
-{%set hash_val = "1cc0306b4a6de1e33ed8a849e077e4ed517c0bd4fca05e2a286c46585e89a52b" %}
+{% set name = "chartkick" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name }}
@@ -10,17 +8,16 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  {{ hash_type }}: {{ hash_val }}
+  sha256: 1cc0306b4a6de1e33ed8a849e077e4ed517c0bd4fca05e2a286c46585e89a52b
 
 build:
   number: 1000
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  script: pip install . --no-deps --ignore-installed --no-cache-dir
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
-
+    - pip
   run:
     - python
 
