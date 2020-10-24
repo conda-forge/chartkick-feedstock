@@ -11,8 +11,9 @@ source:
   sha256: 1cc0306b4a6de1e33ed8a849e077e4ed517c0bd4fca05e2a286c46585e89a52b
 
 build:
-  number: 1001
-  script: pip install . --no-deps --ignore-installed --no-cache-dir
+  number: 1002
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -27,10 +28,13 @@ test:
     - chartkick.templatetags
 
 about:
-  home: https://github.com/mher/chartkick.py
+  home: https://pypi.org/project/chartkick
   license: MIT
+  license_file: LICENSE
   summary: 'Create beautiful Javascript charts with minimal code'
+  dev_url: https://github.com/mher/chartkick.py
 
 extra:
   recipe-maintainers:
     - pmlandwehr
+    - anthchirp
